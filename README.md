@@ -1,5 +1,5 @@
 # BCC Anti Cheat
->
+> A RedM anti cheat and AFK system for Vorp
 
 ## Features
 - Spam click auto kick
