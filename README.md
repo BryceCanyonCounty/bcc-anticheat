@@ -15,7 +15,8 @@
 
 ## TODO:
 - Add other commonly exploited key spams
-- TBD
+- Network disconnection detection improvements.
+- Open to suggestions!
 
 ## Need More Support? 
 - [Vorp Disord](https://discord.gg/DHGVAbCj7N)
