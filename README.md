@@ -5,6 +5,7 @@
 - Spam click auto kick
 - AFK warning and auto kick
 - Server Network check that kicks when not connected for a set period of time
+- Discord webhook integration
 
 ## How to install
 * Download this repo
