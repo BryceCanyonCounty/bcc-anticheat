@@ -1,5 +1,15 @@
 Config = {}
 
+Config.Discord = {
+    active = false,
+    webhookavatar = "https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Danger.png",
+    webhookname = "Anti Cheat",
+    webhook = "",
+    lang = {
+        kick = 'Kicked for: '
+    }
+}
+
 Config.Net = {
     active = true,
     graceperiod = 10000, -- Milisecond - This must be greater than the checkinrate
@@ -19,7 +29,7 @@ Config.AFK = {
         hours = ' hours',
         minutes = ' minutes',
         seconds = ' seconds',
-        kickreason = 'You were afk.'
+        kickreason = 'AFK'
     }
 }
 
@@ -29,7 +39,7 @@ Config.SpamClick = {
     maxspaminfractions = 5,
     spamsensitivity = 250, -- Higher is less sensitive
     lang = {
-        kickreason = 'You were caught spam clicking',
+        kickreason = 'Spam Clicking',
         warning = "You are spam clicking! This will lead to being kicked."
     }
 }

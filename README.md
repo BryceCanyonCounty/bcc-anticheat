@@ -12,6 +12,10 @@
 * Add `ensure <YOUR_RESOURCE_NAME>` to your `server.cfg` file
 * Now you are ready to get coding!
 
+## TODO:
+- Add other commonly exploited key spams
+- TBD
+
 ## Need More Support? 
 - [Vorp Disord](https://discord.gg/DHGVAbCj7N)
 

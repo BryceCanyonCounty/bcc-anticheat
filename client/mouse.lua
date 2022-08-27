@@ -1,6 +1,7 @@
 local infractions = Config.SpamClick.infractions
 local maxspaminfractions = Config.SpamClick.maxspaminfractions
 local spamsensitivity = Config.SpamClick.spamsensitivity
+local kicked = false
 
 local keylist = {
     0x9D2AEA88,
@@ -16,8 +17,9 @@ function startMouseSpamCheck()
         while true do
             Wait(1)
 
-            if infractions > maxspaminfractions then
+            if infractions > maxspaminfractions and kicked == false then
                 TriggerServerEvent("ac:kick", Config.SpamClick.lang.kickreason)
+                kicked = true
             end
 
             for i, v in ipairs(keylist) do

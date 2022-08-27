@@ -14,8 +14,8 @@ end)
 RegisterServerEvent("ac:kick")
 AddEventHandler("ac:kick", function(reason)
     local _source = source
-    print('Dropping player')
-    DropPlayer(_source, reason)
+    Discord.sendMessage(_source, Config.Discord.lang.kick .. reason)
+    DropPlayer(_source, Config.Discord.lang.kick .. reason)
 end)
 
 RegisterServerEvent("ac:checkin")
@@ -35,6 +35,7 @@ AddEventHandler("ac:checkin", function()
         
     if diff > graceperiod then
         DropPlayer(_source, Config.Net.lang.kickreason)
+        Discord.sendMessage(_source, 'Kicked for Network toggling')
     else
         players[_source] = {
             checkedin = currenttime
