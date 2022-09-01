@@ -6,10 +6,6 @@ end)
 
 RegisterNetEvent("vorp:SelectedCharacter")
 AddEventHandler("vorp:SelectedCharacter", function(charid)
-    if Config.Net.active then
-        startOnlineChecks()
-    end
-
     if Config.AFK.active then
         startAFKChecks()
     end

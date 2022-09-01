@@ -9,21 +9,26 @@ client_scripts {
     'client/client.lua',
     'client/mouse.lua',
     'client/net.lua',
-    'client/afk.lua'
+    'client/afk.lua',
+    'client/injectors.lua'
 }
 
 server_scripts {
     'server/server.lua',
-    'server/discord.lua'
+    'server/discord.lua',
+    'server/net.lua',
+    'server/xss.lua',
+    'server/injectors.lua'
 }
 
 shared_scripts {
-    'config.lua'
+    'config.lua',
+    'shared/api/profanity.js',
+    'shared/api/strings.lua'
 }
 
 dependencies {
     'vorp_core'
 }
 
---dont touch
-version '1.0'
+version '1.1'
