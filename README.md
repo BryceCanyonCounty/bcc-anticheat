@@ -1,14 +1,14 @@
 # BCC Anti Cheat
-> A RedM anti cheat and AFK system for Vorp
+> A RedM anti-cheat and abuse prevention for Vorp
 
 ## Features
 - Spam click auto kick
-- AFK warning and auto kick
+- **AFK** warning and auto kick
 - Server Network check and auto kick
 - Discord webhook integration
 - Auto Cross Site Scripting (XSS) attack prevention on player connections
 - Resource Injection Prevention
-- Player Bad Behavior Prevention APIs
+- Player Bad Behavior Prevention APIs for external scripts
   - Profanity Filter for any string
   - String XSS Check
 
