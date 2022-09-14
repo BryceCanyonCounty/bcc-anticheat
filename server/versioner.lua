@@ -32,7 +32,7 @@ Versioner.checkRelease = function (resourcename, repo)
         else
             print('^1❌Outdated! (Version '..current.version..')^0')
             print('^4New Version ^2('..latest.version..') ^3<'..latest.url..'>^0')
-            print('^4Changelog - ^0'..latest.body)
+            print('^4Changelog - ^0\r\n'..latest.body)
         end
     end, 'GET', json.encode(payload), {
         ['Content-Type'] = 'application/json'
