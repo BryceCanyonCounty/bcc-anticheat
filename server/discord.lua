@@ -1,13 +1,25 @@
 Discord = {}
 
-Discord.sendNewMessage = function (name, description, embeds)
-    local wname = Config.Discord.webhookname
+Discord.sendNewMessage = function (name, description, embeds, webhookurl, webhookname, webhookavatar, api)
+    local wname =  Config.Discord.webhookname
     local avatar = Config.Discord.webhookavatar
-    local color = 11342935
+    local webhook = Config.Discord.webhook
+
+    if webhookurl ~= nil then
+        webhook = webhookurl
+    end
+
+    if webhookavatar ~= nil then
+        avatar = webhookavatar
+    end
+
+    if webhookname ~= nil then
+        wname = webhookname
+    end
 
     if embeds == nil then
         embeds = {{
-            color = color,
+            color = 11342935,
             title = name,
             description = description
         }}
@@ -20,8 +32,8 @@ Discord.sendNewMessage = function (name, description, embeds)
         embeds = embeds
     }
 
-    if Config.Discord.active then
-        PerformHttpRequest(Config.Discord.webhook, function(err, text, headers)end, 'POST', json.encode(payload), {
+    if Config.Discord.active or api == true then
+        PerformHttpRequest(webhook, function(err, text, headers)end, 'POST', json.encode(payload), {
             ['Content-Type'] = 'application/json'
         })
     else
@@ -33,3 +45,13 @@ Discord.sendMessage = function (_source, description)
     local name = GetPlayerName(_source)
     Discord.sendNewMessage(name, description)
 end
+
+exports('discord',function()
+    local self = {}
+
+    self.sendMessage = function(webhookurl, webhookname, webhookavatar, name, description, embeds)
+        Discord.sendNewMessage(name, description, embeds, webhookurl, webhookname, webhookavatar, true)
+    end
+
+    return self
+end)

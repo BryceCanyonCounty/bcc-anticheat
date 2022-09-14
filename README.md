@@ -6,13 +6,14 @@
 - **AFK** warning and auto kick
 - Server Network check and auto kick
 - Discord webhook integration
+  - Discord export API
 - Auto Cross Site Scripting (XSS) attack prevention on player connections
 - Resource Injection Prevention
 - Database Group check
-- Resource Version Check API
+- Resource Version Check export APIs
   - Github Release(tag) based check
   - Github Version file based check
-- Player Bad Behavior Prevention APIs for external scripts
+- Player Bad Behavior Prevention export APIs for external scripts
   - Profanity Filter for any string
   - String XSS Check
 
@@ -96,6 +97,39 @@ local cleaned = profanity.filter(mystring, filter)
 print(cleaned)
 -- prints out: "What the **** is this ****"
 ```
+
+### Discord Webhooks
+
+This API allows you to easily add [Discord webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) messages to your scripts.
+
+#### SendMessage
+```lua
+local discord = exports['bcc-anticheat'].discord()
+
+discord.sendMessage('webhookurl', 'My Script', 'https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Danger.png', 'user123', 'this user is awesome')
+```
+
+#### embeds
+> Add custom [embeds](https://birdie0.github.io/discord-webhooks-guide/discord_webhook.html)
+```lua
+local discord = exports['bcc-anticheat'].discord()
+
+discord.sendMessage('webhookurl', 'My Script', 'https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Danger.png', 'user123', 'this user is awesome'{
+  {
+    {
+      color = 11342935,
+      title = 'some times',
+      description = 'awesomesauce'
+    },
+   {
+      color = 11342935,
+      title = 'some other time',
+      description = 'awesomesauce'
+    },
+  }
+})
+```
+
 
 ### XSS String Check
 [Cross Site Scripting Prevention (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting)
