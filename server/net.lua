@@ -4,7 +4,7 @@ if Config.Net.active then
 
     AddEventHandler('playerDropped', function(reason)
         local _source = source
-        players[_source] = nil
+        players[tostring(_source)] = nil
     end)
 
     Citizen.CreateThread(function()

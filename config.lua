@@ -10,6 +10,23 @@ Config.Discord = {
     }
 }
 
+Config.DB = {
+    active = true,
+    adminpingrate = 50000,
+    rolechecks = {
+        'admin', 'mod'
+    },
+    lang = {
+        discord = {
+            title = "DB Group Change",
+            description = "Players group has been changed to admin!",
+            playername = "Player name",
+            steam = "Steam identifier",
+            character = "Character identifier"
+        }
+    }
+}
+
 Config.XSS = {
     active = true,
     lang = {
@@ -29,7 +46,7 @@ Config.ResourceInject = {
 Config.Net = {
     active = true,
     allowedoffenses = 2,
-    checkinrate = 1000, -- Milisecond
+    checkinrate = 1500, -- Milisecond
     kickrate = 10000,
     lang = {
         kickreason = "You must be connected to the internet."

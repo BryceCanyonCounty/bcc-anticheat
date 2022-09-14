@@ -18,7 +18,9 @@ server_scripts {
     'server/discord.lua',
     'server/net.lua',
     'server/xss.lua',
-    'server/injectors.lua'
+    'server/db.lua',
+    'server/injectors.lua',
+    'server/versioner.lua'
 }
 
 shared_scripts {
@@ -31,4 +33,4 @@ dependencies {
     'vorp_core'
 }
 
-version '1.1'
+version '1.2.0'

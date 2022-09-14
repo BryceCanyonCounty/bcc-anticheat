@@ -8,6 +8,10 @@
 - Discord webhook integration
 - Auto Cross Site Scripting (XSS) attack prevention on player connections
 - Resource Injection Prevention
+- Database Group check
+- Resource Version Check API
+  - Github Release(tag) based check
+  - Github Version file based check
 - Player Bad Behavior Prevention APIs for external scripts
   - Profanity Filter for any string
   - String XSS Check
@@ -19,6 +23,47 @@
 * Now you are ready to get coding!
 
 ## API Docs
+
+### Version Check
+
+This API will allow you to add a version check to your resource.
+
+#### Release(Tag) Based Checks
+
+_Hot to use [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)_
+
+> Create a Release and tag  with the version number
+
+_Correct: `1.0.0`_
+
+_Wrong: `v1.1.0`_
+
+> Add the following contents to your lua server
+```lua
+local versioner = exports['bcc-anticheat'].versioner()
+local repo = 'https://github.com/VORPCORE/
+versioner.checkRelease(GetCurrentResourceName(), repo)
+```
+
+#### Version File Based Checks
+
+> Create a file called `version` with the following contents
+```txt
+<1.3>
+- More awesome updates
+<1.1>
+- Some awesome updates
+<1.0>
+- My first Update
+```
+
+
+> Add the following contents to your lua server
+```lua
+local versioner = exports['bcc-anticheat'].versioner()
+local repo = 'https://github.com/VORPCORE/
+versioner.checkFile(GetCurrentResourceName(), repo)
+```
 
 ### Profanity Filter
 
