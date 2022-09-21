@@ -14,7 +14,7 @@ Config.DB = {
     active = true,
     adminpingrate = 50000,
     rolechecks = {
-        'admin', 'mod'
+        "admin", "mod"
     },
     lang = {
         discord = {
@@ -36,10 +36,18 @@ Config.XSS = {
     }
 }
 
+Config.Speed = {
+    active = true,
+    lang = {
+        reason = "Speed Hacking"
+    }
+}
+
 Config.ResourceInject = {
     active = true,
     lang = {
-        reason = "Only approved resources allowed"
+        reason = "Only approved resources allowed",
+        engine = "Cheat Engine Menu Detected"
     }
 }
 
@@ -63,7 +71,13 @@ Config.AFK = {
         hours = " hours",
         minutes = " minutes",
         seconds = " seconds",
-        kickreason = "AFK"
+        kickreason = "AFK",
+        whitelist = {
+            id = "You must include a user id",
+            wladded = "User Added to Whitelist",
+            wlremoved = "User Removed from Whitelist",
+            err = "An Error has Occurred"
+        }
     }
 }
 

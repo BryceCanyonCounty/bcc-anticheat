@@ -1,4 +1,9 @@
-if Config.ResourceInject.active then 
+if Config.ResourceInject.active then
+    RegisterNetEvent(GetCurrentResourceName().. ".verify")
+    AddEventHandler(GetCurrentResourceName().. ".verify", function()
+        TriggerServerEvent("ac:kick", Config.ResourceInject.lang.engine)
+    end)
+
     CreateThread(function()
         while true do
             Wait(500) -- Give the check a bit of breathing room

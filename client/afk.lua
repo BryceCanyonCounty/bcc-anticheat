@@ -1,18 +1,17 @@
-
 function getTimeString(time)
     if time < 60 then
         return time .. Config.AFK.lang.seconds
-    end 
+    end
     if time >= 60 and time < 3600 then
-        return time/60 .. Config.AFK.lang.minutes
+        return time / 60 .. Config.AFK.lang.minutes
     end
 
     if time < 3600 then
-        return time/3600 .. Config.AFK.lang.hours
-    end 
+        return time / 3600 .. Config.AFK.lang.hours
+    end
 end
 
-function startAFKChecks() 
+function startAFKChecks()
     local kicktime = Config.AFK.kicktime
     local warntime = Config.AFK.warntime
     local player = {
@@ -21,35 +20,47 @@ function startAFKChecks()
         timer = 0
     }
 
-    Citizen.CreateThread(function()
-		while true do
-			Wait(1000)
-            
+    local function runCheck()
+        while true do
+            Wait(1000)
+
             local ped = PlayerPedId()
             if ped then
+                local isdead = IsEntityDead(ped)
                 if not isdead then
-                    local isdead = IsEntityDead(ped)
-                    
-                    player.current = GetEntityCoords(ped, true)    
+    
+                    player.current = GetEntityCoords(ped, true)
                     if player.current == player.last then
                         if player.timer >= kicktime then
                             TriggerServerEvent("ac:kick", Config.AFK.lang.kickreason)
                             return
                         end
-                        
                         if player.timer >= warntime then
                             local timeleft = kicktime - player.timer
                             local printtime = getTimeString(timeleft)
-                            VORPcore.NotifyCenter(Config.AFK.lang.kick .. printtime .. Config.AFK.lang.kick2 , 1000)
+                            VORPcore.NotifyCenter(Config.AFK.lang.kick .. printtime .. Config.AFK.lang.kick2, 1000)
                         end
-                        player.timer = player.timer + 1 
+                        player.timer = player.timer + 1
                     else
                         player.timer = 0
                     end
-        
+    
                     player.last = player.current
                 end
             end
         end
+    end
+
+    RegisterNetEvent('bccac-updateafk')
+    AddEventHandler('bccac-updateafk', function(state)
+        runCheck()
+    end)
+
+    Citizen.CreateThread(function()
+        TriggerServerEvent('bccac-rolecheck', function(response)
+            if not response then
+                runCheck()
+            end
+        end)
     end)
 end

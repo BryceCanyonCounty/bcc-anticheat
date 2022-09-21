@@ -10,7 +10,8 @@ client_scripts {
     'client/mouse.lua',
     'client/net.lua',
     'client/afk.lua',
-    'client/injectors.lua'
+    'client/injectors.lua',
+    'client/speed.lua'
 }
 
 server_scripts {
@@ -20,7 +21,9 @@ server_scripts {
     'server/xss.lua',
     'server/db.lua',
     'server/injectors.lua',
-    'server/versioner.lua'
+    'server/versioner.lua',
+    'server/afk.lua',
+    'server/speed.lua'
 }
 
 shared_scripts {
@@ -33,4 +36,4 @@ dependencies {
     'vorp_core'
 }
 
-version '1.2.0'
+version '1.2.1'
