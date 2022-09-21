@@ -10,6 +10,7 @@
 - Auto Cross Site Scripting (XSS) attack prevention on player connections
 - Resource Injection Prevention
 - Database Group check
+- Speed (Time) Check
 - Resource Version Check export APIs
   - Github Release(tag) based check
   - Github Version file based check
