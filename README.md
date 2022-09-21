@@ -38,7 +38,7 @@ _Hot to use [Github Releases](https://docs.github.com/en/repositories/releasing-
 
 _Correct: `1.0.0`_
 
-_Wrong: `v1.1.0`_
+_Wrong: `v1.0.0`_
 
 > Add the following contents to your lua server
 ```lua
