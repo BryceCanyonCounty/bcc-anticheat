@@ -11,7 +11,8 @@ client_scripts {
     'client/net.lua',
     'client/afk.lua',
     'client/injectors.lua',
-    'client/speed.lua'
+    'client/speed.lua',
+    'client/online.lua'
 }
 
 server_scripts {
@@ -23,7 +24,8 @@ server_scripts {
     'server/injectors.lua',
     'server/versioner.lua',
     'server/afk.lua',
-    'server/speed.lua'
+    'server/speed.lua',
+    'server/online.lua'
 }
 
 shared_scripts {

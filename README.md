@@ -31,7 +31,7 @@ This API will allow you to add a version check to your resource.
 
 #### Release(Tag) Based Checks
 
-_Hot to use [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)_
+_How to use [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)_
 
 > Create a Release and tag  with the version number
 

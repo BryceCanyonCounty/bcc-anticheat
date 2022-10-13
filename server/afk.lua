@@ -110,7 +110,7 @@ if Config.AFK.active then
 
         exports.ghmattimysql:execute("SELECT * FROM bccacwl WHERE identifier = @identifier AND charidentifier = @charidentifier", {["@identifier"] = steamid, ["@charidentifier"] = charId}, function(result)
             local pass = false
-            if result[1].afk ~= nil then
+            if result[1] ~= nil and result[1].afk ~= nil then
                 pass = result[1].afk
             end 
             cb(pass)
