@@ -10,6 +10,7 @@
 - Auto Cross Site Scripting (XSS) attack prevention on player connections
 - Resource Injection Prevention
 - Database Group check
+- Speed (Time) Check
 - Resource Version Check export APIs
   - Github Release(tag) based check
   - Github Version file based check
@@ -37,7 +38,7 @@ _How to use [Github Releases](https://docs.github.com/en/repositories/releasing-
 
 _Correct: `1.0.0`_
 
-_Wrong: `v1.1.0`_
+_Wrong: `v1.0.0`_
 
 > Add the following contents to your lua server
 ```lua
