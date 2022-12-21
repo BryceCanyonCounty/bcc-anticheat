@@ -57,10 +57,13 @@ function startAFKChecks()
     end)
 
     Citizen.CreateThread(function()
-        TriggerServerEvent('bccac-rolecheck', function(response)
-            if not response then
-                runCheck()
-            end
-        end)
+        TriggerServerEvent('bccac-rolecheck')
+    end)
+
+    RegisterNetEvent('bccac-rolecheck-r')
+    AddEventHandler('bccac-rolecheck-r', function(response)
+        if not response then
+            runCheck()
+        end
     end)
 end

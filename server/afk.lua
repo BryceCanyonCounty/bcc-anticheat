@@ -35,7 +35,7 @@ if Config.AFK.active then
 
         ]])
         if result and result.warningStatus > 1 then
-            print("ERROR: Failed to create AFK WL Table", dump(result))
+            print("ERROR: Failed to create AFK WL Table")
         end
     end
 
@@ -102,7 +102,7 @@ if Config.AFK.active then
     end)
 
     RegisterServerEvent('bccac-rolecheck')
-    AddEventHandler('bccac-rolecheck', function(cb)
+    AddEventHandler('bccac-rolecheck', function()
         local _source = source
         local steamid = GetSteamID(_source)
         local User = VorpCore.getUser(_source)
@@ -112,8 +112,9 @@ if Config.AFK.active then
             local pass = false
             if result[1] ~= nil and result[1].afk ~= nil then
                 pass = result[1].afk
-            end 
-            cb(pass)
+            end
+
+            TriggerClientEvent("bccac-rolecheck-r", _source, pass)
         end)
     end)
 end
