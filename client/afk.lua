@@ -14,7 +14,7 @@ function getTimeString(time)
 
     if time < 3600 then
         local rdown =  math.floor(time)
-        return rdown / 3600
+        return math.floor(rdown / 3600) .. Config.AFK.lang.hours .. ' ' .. math.floor(time / 60) .. Config.AFK.lang.minutes .. ' ' .. (time % 60) .. Config.AFK.lang.seconds
     end
 end
 
