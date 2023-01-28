@@ -2,12 +2,19 @@ function getTimeString(time)
     if time < 60 then
         return time .. Config.AFK.lang.seconds
     end
+
+
+
+
+
+
     if time >= 60 and time < 3600 then
-        return time / 60 .. Config.AFK.lang.minutes
+        return math.floor(time / 60) .. Config.AFK.lang.minutes .. ' ' .. (time % 60) .. Config.AFK.lang.seconds
     end
 
     if time < 3600 then
-        return time / 3600 .. Config.AFK.lang.hours
+        local rdown =  math.floor(time)
+        return rdown / 3600
     end
 end
 
@@ -30,7 +37,7 @@ function startAFKChecks()
                 if not isdead then
     
                     player.current = GetEntityCoords(ped, true)
-                    if player.current == player.last then
+                    if player.current == player.last or IsPedRagdoll(ped) then
                         if player.timer >= kicktime then
                             TriggerServerEvent("ac:kick", Config.AFK.lang.kickreason)
                             return
