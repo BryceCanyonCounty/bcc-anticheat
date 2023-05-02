@@ -42,7 +42,12 @@ Discord.sendNewMessage = function (name, description, embeds, webhookurl, webhoo
 end
 
 Discord.sendMessage = function (_source, description)
-    local name = GetPlayerName(_source)
+    local name
+    if _source then
+        name = GetPlayerName(_source)
+    else
+        name = "Player"
+    end
     Discord.sendNewMessage(name, description)
 end
 

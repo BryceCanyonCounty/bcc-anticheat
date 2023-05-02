@@ -147,6 +147,8 @@ print(isxss)
 ## TODO:
 - Add other commonly exploited key spams
 - Potentially migrate player state flags for net, and afk to statebags
+- Detect Menus better
+- Multi-Framework support
 - Open to suggestions!
 
 ## Need More Support? 
