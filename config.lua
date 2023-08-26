@@ -46,16 +46,15 @@ Config.Speed = {
 Config.ResourceInject = {
     active = true,
     lang = {
-        reason = "Only approved resources allowed",
-        engine = "Cheat Engine Menu Detected"
+        reason = "Cheat Menu Detected"
     }
 }
 
 Config.Net = {
     active = true,
     allowedoffenses = 2,
-    checkinrate = 1500, -- Milisecond
-    kickrate = 10000,
+    checkinrate = 5000, -- Milisecond
+    kickrate = 20000,
     lang = {
         kickreason = "You must be connected to the internet."
     }
@@ -89,5 +88,13 @@ Config.SpamClick = {
     lang = {
         kickreason = "Spam Clicking",
         warning = "You are spam clicking! This will lead to being kicked."
+    }
+}
+
+Config.KickOnResourceStop = {
+    active = true,
+    lang = {
+        kickreason = "Stop Resource Detected",
+        warning = "Stoping resources is not allowed"
     }
 }

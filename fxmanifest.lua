@@ -7,12 +7,13 @@ author 'Bytesizd'
 
 client_scripts {
     'client/client.lua',
+    'client/injectors.lua',
     'client/mouse.lua',
     'client/net.lua',
     'client/afk.lua',
-    'client/injectors.lua',
     'client/speed.lua',
-    'client/online.lua'
+    'client/online.lua',
+    'client/resourcestop.lua'
 }
 
 server_scripts {
@@ -38,4 +39,4 @@ dependencies {
     'vorp_core'
 }
 
-version '1.2.4'
+version '1.2.5'
