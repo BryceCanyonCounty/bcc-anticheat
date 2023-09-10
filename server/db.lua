@@ -1,6 +1,6 @@
 local dbchars = {}
 
-function checkRole(current, old, role)
+local function checkRole(current, old, role)
     if old.group ~= role and current.group == role then
         local embeds = {
             {

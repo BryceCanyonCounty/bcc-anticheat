@@ -35,8 +35,4 @@ shared_scripts {
     'shared/api/strings.lua'
 }
 
-dependencies {
-    'vorp_core'
-}
-
-version '1.2.5'
+version '1.2.6'
