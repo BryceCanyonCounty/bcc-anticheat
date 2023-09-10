@@ -98,3 +98,31 @@ Config.KickOnResourceStop = {
         warning = "Stoping resources is not allowed"
     }
 }
+
+Config.Objects = { -- Anti Spawn Object
+    active = true,
+
+    --- Add more objects
+    --- Example: [GetHashKey("p_benchnbx02x")],
+    --- You can view the objects here https://redlookup.com/objects
+	[GetHashKey("")]
+}
+
+Config.Weapons = { -- Blacklist Weapon and Anti Infinte Ammo
+    active = true,
+
+--- Add more weapons
+--- Example: [GetHashKey("weapon_revolver_navy")],
+--- You can view the weapons here https://github.com/femga/rdr3_discoveries/blob/master/weapons/weapons.lua
+    [GetHashKey("")]
+}
+
+Config.PlayerStatus = { -- Anti Change Health
+    active = true,
+    health = 600, -- Default Value (2088 = Golden Core Health)
+    lang = {
+        kickreason = "Player health hack detected"
+    }
+}
+
+
