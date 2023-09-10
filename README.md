@@ -17,6 +17,10 @@
 - Player Bad Behavior Prevention export APIs for external scripts
   - Profanity Filter for any string
   - String XSS Check
+- Blacklist Option
+  - Anti Spawn Blacklist Object
+  - Anti Spawn Blacklist Weapon
+  - Anti Health Hack
 
 ## How to install
 * Download this repo
