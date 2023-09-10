@@ -100,21 +100,26 @@ Config.KickOnResourceStop = {
 }
 
 Config.Objects = { -- Anti Spawn Object
-    active = true,
+    active = false,
 
     --- Add more objects
     --- Example: [GetHashKey("p_benchnbx02x")],
     --- You can view the objects here https://redlookup.com/objects
-	[GetHashKey("")]
+	blacklist = {}
+}
+
+-- A check to ensure no one is using Infinite ammo
+Config.InfiniteAmmo = {
+    active = true
 }
 
 Config.Weapons = { -- Blacklist Weapon and Anti Infinte Ammo
-    active = true,
+    active = false,
 
 --- Add more weapons
 --- Example: [GetHashKey("weapon_revolver_navy")],
 --- You can view the weapons here https://github.com/femga/rdr3_discoveries/blob/master/weapons/weapons.lua
-    [GetHashKey("")]
+    blacklistlist = {}
 }
 
 Config.PlayerStatus = { -- Anti Change Health
