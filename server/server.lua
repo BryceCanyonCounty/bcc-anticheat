@@ -13,12 +13,6 @@ end)
 if Config.FX.active  then 
 
 
-local fxWhitelist = {
-    "FX_EVENT_NAME_1",
-    "FX_EVENT_NAME_2",
-    -- Add other fx event names here
-}
-
 local fxCounts = {}  -- Table to keep track of each player's fx event count
 
 -- Utility function to check if a value is in a table
