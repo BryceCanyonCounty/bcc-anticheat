@@ -132,4 +132,16 @@ Config.PlayerStatus = { -- Anti Change Health
     }
 }
 
+Config.FX = { -- OHHHH YEAAA
+    active = true,
+    limit = 600, -- Default Value (2088 = Golden Core Health)
+	fxWhitelist = {
+    "FX_EVENT_NAME_1",
+    "FX_EVENT_NAME_2",
+    -- Add other fx event names here
+},
+    lang = {
+        kickreason = "Player health hack detected"
+    }
+}
 
