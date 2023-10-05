@@ -50,9 +50,8 @@ AddEventHandler('ptFxEvent', function(sender, eventName, eventData)
         fxCounts[sender] = (fxCounts[sender] or 0) + 1
 
         if fxCounts[sender] > Config.fx.limit then
-            local message = string.format('[BCC Anticheat]: Player %s caused event %s too many times with data %s', sender, eventName, eventDataString)
             CancelEvent()
-            DropPlayer(sender, message)
+            DropPlayer(sender, Config.fx.lang.kickreason)
         end
     end
 end)
