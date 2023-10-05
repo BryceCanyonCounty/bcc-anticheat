@@ -137,11 +137,10 @@ Config.FX = {
     limit = 5, -- Default Value (5)
 	fxWhitelist = {
     "EXAMPLE",
-
     -- Add other fx event names here
 },
     lang = {
-        kickreason = "Blacklisted FX detected"
+        kickreason = 'Player %s caused event %s too many times with data %s', sender, eventName, eventDataString
     }
 }
 
