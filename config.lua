@@ -133,10 +133,10 @@ Config.PlayerStatus = { -- Anti Change Health
 }
 
 Config.FX = { 
-    active = true,
+    active = false,
     limit = 5, -- Default Value (5)
 	fxWhitelist = {
-    "EXAMPLE",
+    -- "EXAMPLE",
     -- Add other fx event names here
 },
     lang = {
