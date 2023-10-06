@@ -132,4 +132,15 @@ Config.PlayerStatus = { -- Anti Change Health
     }
 }
 
+Config.FX = { 
+    active = true,
+    limit = 5, -- Default Value (5)
+	fxWhitelist = {
+    "EXAMPLE",
+    -- Add other fx event names here
+},
+    lang = {
+        kickreason = 'Player %s caused event %s too many times with data %s', sender, eventName, eventDataString
+    }
+}
 
