@@ -35,4 +35,4 @@ shared_scripts {
     'shared/api/strings.lua'
 }
 
-version '1.2.6'
+version '1.3.0'
