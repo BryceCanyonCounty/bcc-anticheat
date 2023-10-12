@@ -18,7 +18,6 @@ if Config.AFK.active then
                 `charidentifier` INT(30) NOT NULL DEFAULT '0',
                 `afk` TINYINT(2) NOT NULL DEFAULT '0',
                 PRIMARY KEY (`id`),
-                CONSTRAINT `FK_bccacwl_users` FOREIGN KEY (`identifier`) REFERENCES `users` (`identifier`) ON DELETE CASCADE ON UPDATE CASCADE,
                 INDEX `identifier` (`identifier`)
             ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 

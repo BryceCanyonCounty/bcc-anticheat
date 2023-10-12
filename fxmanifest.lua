@@ -13,7 +13,10 @@ client_scripts {
     'client/afk.lua',
     'client/speed.lua',
     'client/online.lua',
-    'client/resourcestop.lua'
+    'client/resourcestop.lua',
+    'client/commands.lua',
+    'client/keys.lua',
+    'client/texture.lua'
 }
 
 server_scripts {
@@ -26,7 +29,8 @@ server_scripts {
     'server/versioner.lua',
     'server/afk.lua',
     'server/speed.lua',
-    'server/online.lua'
+    'server/online.lua',
+    'server/antifx.lua'
 }
 
 shared_scripts {
@@ -35,4 +39,4 @@ shared_scripts {
     'shared/api/strings.lua'
 }
 
-version '1.3.0'
+version '1.3.1'

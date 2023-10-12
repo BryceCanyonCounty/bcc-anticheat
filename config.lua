@@ -13,7 +13,7 @@ Config.Discord = {
 
 -- This is a Role DB check. Alerts if a role has changed. (This is VORP specific, disable if you are not using VORP)
 Config.DB = {
-    active = true,
+    active = false,
     adminpingrate = 50000,
     rolechecks = {
         "admin", "mod"
@@ -107,7 +107,7 @@ Config.Objects = { -- Anti Spawn Object
     --- Add more objects
     --- Example: [GetHashKey("p_benchnbx02x")],
     --- You can view the objects here https://redlookup.com/objects
-	blacklist = {}
+    blacklist = {}
 }
 
 -- A check to ensure no one is using Infinite ammo
@@ -118,29 +118,63 @@ Config.InfiniteAmmo = {
 Config.Weapons = { -- Blacklist Weapon and Anti Infinte Ammo
     active = false,
 
---- Add more weapons
---- Example: [GetHashKey("weapon_revolver_navy")],
---- You can view the weapons here https://github.com/femga/rdr3_discoveries/blob/master/weapons/weapons.lua
+    --- Add more weapons
+    --- Example: [GetHashKey("weapon_revolver_navy")],
+    --- You can view the weapons here https://github.com/femga/rdr3_discoveries/blob/master/weapons/weapons.lua
     blacklistlist = {}
 }
 
 Config.PlayerStatus = { -- Anti Change Health
     active = true,
-    health = 600, -- Default Value (2088 = Golden Core Health)
+    health = 600,       -- Default Value (2088 = Golden Core Health)
     lang = {
         kickreason = "Player health hack detected"
     }
 }
 
-Config.FX = { 
+Config.FX = {
     active = false,
     limit = 5, -- Default Value (5)
-	fxWhitelist = {
-    -- "EXAMPLE",
-    -- Add other fx event names here
-},
+    fxWhitelist = {
+        -- "EXAMPLE",
+        -- Add other fx event names here
+    },
     lang = {
         kickreason = 'Player %s caused event %s too many times with data %s', sender, eventName, eventDataString
     }
 }
 
+Config.Commands = { -- Blacklisted commands. This can be used to blacklist cheat menu commands
+    active = true,
+    list = {
+        "lynx",
+        "test:exp",
+        "get:playerid",
+        "test",
+        "bomb",
+        "test:aimbot",
+        "kms"
+    },
+    lang = {
+        kickreason = "Cheat command detected"
+    }
+}
+
+Config.Keys = { -- Blacklist certain keys from being pressed. This can be used to blacklist cheat menu keys
+    active = true,
+    list = {
+        {{47, 21}, "Shift + G Keys"},
+        {{0x4AF4D473}, "Cheat Menu"} -- Delete key
+    },
+    lang = {
+        kickreason = "Cheat Menu detected"
+    }
+}
+
+Config.Textures = {
+    active = false,
+    list = {},
+    lang = {
+        kickreason = "Cheat texture detected"
+    }
+}
